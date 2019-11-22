@@ -35,6 +35,9 @@ function resize (NetObject $object, array $config = []): Timer
             {
                 $object->$dimension += ceil ($config['speed'] * ($config[$dimension] - $object->$dimension));
 
+                if ($config['speed'] * abs ($config[$dimension] - $object->$dimension) < 1)
+                    $object->$dimension = $config[$dimension];
+
                 if ($object->$dimension == $config[$dimension])
                     ++$finished;
             }
