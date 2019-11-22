@@ -24,7 +24,7 @@ resize ($object, [
     'h'        => 96,
     'speed'    => 0.1,
     'callable' => fn ($self) => pre ($self->caption)
-])
+]);
 ```
 
 $config принимает параметры:
